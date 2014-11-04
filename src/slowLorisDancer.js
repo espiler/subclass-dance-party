@@ -13,8 +13,8 @@ SlowLorisDancer.prototype.step = function(){
     // call the old version of step at the beginning of any call to this new version of step
   this.oldStep();
 
-  var left = parseInt(this.$node.css("left")) + (Math.random() - 0.5)*20;
-  var top = parseInt(this.$node.css("top")) + (Math.random() - 0.5)*20;
+  // var left = parseInt(this.$node.css("left")) + (Math.random() - 0.5)*20;
+  // var top = parseInt(this.$node.css("top")) + (Math.random() - 0.5)*20;
   this.scale === 1 ? this.scale = -1 : this.scale = 1;
   var styleSettings = {
     'transform': 'scaleX('+this.scale+')'

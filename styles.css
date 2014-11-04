@@ -3,7 +3,8 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background-image: url('images/background.jpg');
+  background-size: cover;
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -23,29 +24,36 @@ body, a:link, a:visited, a:active{
 .dancer{
   border:10px solid red;
   border-radius:10px;
-  position:absolute;
+  position: absolute;
 }
 
 .blueDancer{
   border:30px solid blue;
   border-radius:30px;
-  position:absolute;
+  position: absolute;
 }
 
 .dancingDancer{
   border:20px solid purple;
   border-radius: 10px;
-  position:absolute;
+  position: absolute;
 }
 
 .slowLoris{
   height:40%;
   content: url('images/slow-loris.png');
-  position:absolute;
+  position: absolute;
 }
 
 .starFish {
   height:20%;
   content: url('images/starFish.png');
-  position:absolute; 
+  position: absolute; 
+}
+
+.flyingBird{
+  height: 12%;
+  position: absolute; 
+  content: url('images/flyingbird.png');
+  animate: left
 }
