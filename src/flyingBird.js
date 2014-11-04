@@ -1,18 +1,26 @@
-var FlyingBird = function(top, left, timeBetweenSteps){
-  Dancer.call(this, top, left, timeBetweenSteps);
+var FlyingBird = function(top, left){
+  Dancer.call(this, top);
   this.$node = $('<span class="flyingBird"></span>');
   this.step();
-  this.setPosition(top/4, left);
+  this.setPosition(top/4);
+  this.timeBetweenSteps = 3500;
+  this.scale = -1;
 };
 
 FlyingBird.prototype = Object.create(Dancer.prototype);
+FlyingBird.prototype.setPosition = function(top){
+  var styleSettings = {
+    top: top,
+  };
+  this.$node.css(styleSettings);
+};
 FlyingBird.prototype.constructor = FlyingBird;
 FlyingBird.prototype.oldStep = Dancer.prototype.step;
 FlyingBird.prototype.step = function(){
-    // call the old version of step at the beginning of any call to this new version of step
   this.oldStep();
-  // var styleSettings = {
-  //   'animate': 'left + 250'
-  // };
-  // this.$node.css(styleSettings);
+  this.scale === 1 ? this.scale = -1 : this.scale = 1;
+  var styleSettings = {
+    'transform': 'scaleX('+this.scale+')'
+  };
+  this.$node.css(styleSettings);
 };

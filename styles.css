@@ -69,4 +69,24 @@ body, a:link, a:visited, a:active{
   height: 12%;
   position: absolute; 
   content: url('images/flyingbird.png');
+  animation-name: fly;
+  animation-duration: 7000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  -webkit-animation-name: fly;
+  -webkit-animation-duration: 7000ms;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+}
+
+@keyframes fly {
+    0% {left: -5%;}
+    50% {left: 93%;}
+    100% {left: 0%;}
+}
+
+@-webkit-keyframes fly {
+    0% {left: -5%;}
+    50% {left: 93%;}
+    100% {left: 0%;}    
 }
