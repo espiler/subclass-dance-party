@@ -15,9 +15,9 @@ StarfishSpinner.prototype.step = function(){
 
   var left = parseInt(this.$node.css("left")) + (Math.random() - 0.5)*20;
   var top = parseInt(this.$node.css("top")) + (Math.random() - 0.5)*20;
-  this.deg = (this.deg+10)%360
+  // this.deg = (this.deg+10)%360
   var styleSettings = {
-    'transform': 'rotate('+this.deg+'deg)'
+    // 'transform': 'rotate('+this.deg+'deg)'
   };
   this.$node.css(styleSettings);
 };
