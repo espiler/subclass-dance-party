@@ -80,13 +80,30 @@ body, a:link, a:visited, a:active{
 }
 
 @keyframes fly {
-    0% {left: -5%;}
-    50% {left: 93%;}
-    100% {left: 0%;}
+  0% {left: -5%;}
+  50% {left: 93%;}
+  100% {left: 0%;}
 }
 
 @-webkit-keyframes fly {
-    0% {left: -5%;}
-    50% {left: 93%;}
+  0% {left: -5%;}
+  50% {left: 93%;}
+  100% {left: 0%;}    
+}
+
+.lineup{
+  animation-name: lineup;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  -webkit-animation-name: lineup;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: linear; 
+}
+
+@keyframes lineup {
+    100% {left: 0%;}
+}
+
+@-webkit-keyframes lineup {
     100% {left: 0%;}    
 }
