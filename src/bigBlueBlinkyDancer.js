@@ -1,6 +1,8 @@
 var BigBlueBlinkyDancer = function(top, left, timeBetweenSteps){
   Dancer.call(this, top, left, timeBetweenSteps);
   this.$node = $('<span class="blueDancer"></span>');
+  this.step();
+  this.setPosition(top, left);
 };
 
 BigBlueBlinkyDancer.prototype = Object.create(Dancer.prototype);

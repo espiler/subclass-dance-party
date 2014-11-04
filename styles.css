@@ -31,3 +31,9 @@ body, a:link, a:visited, a:active{
   border-radius:30px;
   position:absolute;
 }
+
+.dancingDancer{
+  border:20px solid purple;
+  border-radius: 10px;
+  position:absolute;
+}
