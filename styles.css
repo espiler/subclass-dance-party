@@ -40,7 +40,12 @@ body, a:link, a:visited, a:active{
 
 .slowLoris{
   height:40%;
-  content: url('http://evantravels.com/slow-loris.png');
+  content: url('images/slow-loris.png');
   position:absolute;
-  transform: scaleX(-1);
+}
+
+.starFish {
+  height:20%;
+  content: url('images/starFish.png');
+  position:absolute; 
 }

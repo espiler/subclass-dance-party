@@ -3,6 +3,7 @@ var SlowLorisDancer = function(top, left, timeBetweenSteps){
   this.$node = $('<span class="slowLoris"></span>');
   this.step();
   this.setPosition(top, left);
+  this.scale = 1
 };
 
 SlowLorisDancer.prototype = Object.create(Dancer.prototype);
@@ -14,10 +15,9 @@ SlowLorisDancer.prototype.step = function(){
 
   var left = parseInt(this.$node.css("left")) + (Math.random() - 0.5)*20;
   var top = parseInt(this.$node.css("top")) + (Math.random() - 0.5)*20;
+  this.scale === 1 ? this.scale = -1 : this.scale = 1;
   var styleSettings = {
-    top:  top,
-    left:  left
-    // transform: rotate(45deg)
+    'transform': 'scaleX('+this.scale+')'
   };
   this.$node.css(styleSettings);
 };
