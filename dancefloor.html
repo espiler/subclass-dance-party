@@ -21,7 +21,16 @@
       <a href="#" class="addDancerButton" data-dancer-maker-function-name="SlowLorisDancer">Slow Loris</a>
       <a href="#" class="addDancerButton" data-dancer-maker-function-name="StarfishSpinner">Starfish Spinning!</a>
       <a href="#" class="addDancerButton" data-dancer-maker-function-name="FlyingBird">Flying Bird</a>
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="Random">Random Dancer</a>
       </div>
     <script src="src/init.js"></script>
+    <script>
+      $(document).ready(function(){
+        var allMakersFunctions = ["FlyingBird, StarfishSpinner, SlowLorisDancer, DancingDancer, BigBlueBlinkyDancer, BlinkyDancer"]
+        var randomFunction = allMakersFunctions[Math.ceil(Math.random())*allMakersFunctions.length]
+      }
+    </script>
   </body>
 </html>
+
+

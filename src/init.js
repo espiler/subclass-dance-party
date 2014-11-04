@@ -17,6 +17,12 @@ $(document).ready(function(){
      */
     var dancerMakerFunctionName = $(this).data("dancer-maker-function-name");
     // get the maker function for the kind of dancer we're supposed to make
+    if (dancerMakerFunctionName === "Random") {
+        var allMakersFunctions = ['FlyingBird', 'StarfishSpinner', 'SlowLorisDancer', 
+          'DancingDancer', 'BigBlueBlinkyDancer', 'BlinkyDancer']
+        dancerMakerFunctionName = allMakersFunctions[Math.floor(Math.random()
+          *allMakersFunctions.length)]
+    }
     var dancerMakerFunction = window[dancerMakerFunctionName];
     // make a dancer with a random position
 
