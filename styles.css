@@ -37,3 +37,10 @@ body, a:link, a:visited, a:active{
   border-radius: 10px;
   position:absolute;
 }
+
+.slowLoris{
+  height:40%;
+  content: url('http://evantravels.com/slow-loris.png');
+  position:absolute;
+  transform: scaleX(-1);
+}

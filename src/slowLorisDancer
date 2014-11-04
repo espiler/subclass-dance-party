@@ -1,0 +1,27 @@
+var SlowLorisDancer = function(top, left, timeBetweenSteps, rotation){
+  Dancer.call(this, top, left, timeBetweenSteps);
+  this.$node = $('<span class="slowLoris"></span>');
+  this.step();
+  this.setPositionRotation(top, left, rotation);
+};
+
+SlowLorisDancer.prototype = Object.create(Dancer.prototype);
+SlowLorisDancer.prototype.constructor = SlowLorisDancer;
+SlowLorisDancer.prototype.oldStep = Dancer.prototype.step;
+SlowLorisDancer.prototype.step = function(){
+    // call the old version of step at the beginning of any call to this new version of step
+  this.oldStep();
+
+  // var left = parseInt(this.$node.css("left")) + (Math.random() - 0.5)*20;
+  // var top = parseInt(this.$node.css("top")) + (Math.random() - 0.5)*20;
+  // var transform = 'rotateZ('+Math.random()*360+'deg)'
+  // var rotation;
+  // var styleSettings = {
+  //   top:  top,
+  //   left:  left,
+  //   transform: transform
+  // };
+  // // this.$node.css(styleSettings);
+
+  // this.$node.animate(styleSettings)
+};

@@ -25,7 +25,9 @@ $(document).ready(function(){
       $("body").width() * Math.random(),
       Math.random() * 1000
     );
+
     $('body').append(dancer.$node);
+    dancers.push(dancer);
   });
 });
 
