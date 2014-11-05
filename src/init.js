@@ -38,9 +38,24 @@ $(document).ready(function(){
       birds.push(dancer);
     }
     dancers.push(dancer);
+
+    if (dancer instanceof Annihilate){
+      setTimeout(dancer.$node.remove.bind(dancer.$node), 8000);
+      var content = {
+            content: "url(http://dumpfm.s3.amazonaws.com/images/20101022/1287793594232-dumpfm-FAUXreal-kevinexplosionlarge.gif)"
+          };
+      for (var i = 0; i < dancers.length; i++){
+        var randomTime = Math.random()*8000;
+        if (!(dancers[i] instanceof Annihilate)) {
+          var dead = dancers[i].$node;
+          setTimeout(function(){
+            dead.css(content).fadeOut(1200);
+            setTimeout(dead.remove.bind(dead), 1500);
+          }, 2000);
+        }
+      }
+    }
   });
-
-
 
 
   $(".lineUpButton").on("click", function(event){
@@ -79,6 +94,7 @@ $(document).ready(function(){
     var left = shooterGull.$node.offset().left;
     var poop = new Poop(top, left);
     $('body').append(poop.$node)
+    setTimeout(poop.$node.remove.bind(poop.$node), 10000);
   })
 
 });
@@ -90,8 +106,6 @@ $("body").on("click", ".fader", function(event){
   }, 3000
   )
 });
-
-
 
 
 

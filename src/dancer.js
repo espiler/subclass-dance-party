@@ -33,7 +33,8 @@ Dancer.prototype.checkRelativePosition = function() {
     var updatedDancers = window.dancers;
     // console.log(that.$node.offset().left);
     for (var i=0; i<updatedDancers.length; i++) {
-      if (updatedDancers[i] !== that && !(updatedDancers[i] instanceof FlyingBird)) {
+      if (updatedDancers[i] !== that && !(updatedDancers[i] instanceof FlyingBird)
+        && !(updatedDancers[i] instanceof Annihilate)) {
         var distance = Math.sqrt(Math.pow(Math.abs(that.$node.offset().top-updatedDancers[i].$node.offset().top),2) +
                        Math.pow(Math.abs(that.$node.offset().left-updatedDancers[i].$node.offset().left),2));
         if (distance < 75) {
@@ -41,7 +42,7 @@ Dancer.prototype.checkRelativePosition = function() {
             content: "url(http://dumpfm.s3.amazonaws.com/images/20101022/1287793594232-dumpfm-FAUXreal-kevinexplosionlarge.gif)"
           };
           updatedDancers[i].$node.css(content).fadeOut(1200);
-
+          setTimeout(updatedDancers[i].$node.remove.bind(updatedDancers[i].$node), 1500);
         }
       }
     }
