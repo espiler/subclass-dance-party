@@ -1,6 +1,6 @@
 var DancingDancer = function(top, left, timeBetweenSteps){
   Dancer.call(this, top, left, timeBetweenSteps);
-  this.$node = $('<span class="dancingDancer"></span>');
+  this.$node = $('<span class="dancingDancer fader"></span>');
   this.step();
   this.setPosition(top, left);
 };

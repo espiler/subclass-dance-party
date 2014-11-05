@@ -48,16 +48,11 @@ body, a:link, a:visited, a:active{
 .starFish {
   height:20%;
   content: url('images/starFish.png');
-  position: absolute; 
+  position: absolute;
   -webkit-animation-name: spin;
   -webkit-animation-duration: 4000ms;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
-}
-
-@keyframes spin {
-    from {transform:rotate(0deg);}
-    to {transform:rotate(360deg);}
 }
 
 @-webkit-keyframes spin {
@@ -67,7 +62,7 @@ body, a:link, a:visited, a:active{
 
 .flyingBird{
   height: 12%;
-  position: absolute; 
+  position: absolute;
   content: url('images/flyingbird.png');
   animation-name: fly;
   animation-duration: 7000ms;
@@ -81,29 +76,36 @@ body, a:link, a:visited, a:active{
 
 @keyframes fly {
   0% {left: -5%;}
-  50% {left: 93%;}
+  50% {left: 90%;}
   100% {left: 0%;}
 }
 
 @-webkit-keyframes fly {
   0% {left: -5%;}
-  50% {left: 93%;}
-  100% {left: 0%;}    
+  50% {left: 90%;}
+  100% {left: 0%;}
 }
 
-.lineup{
-  animation-name: lineup;
-  animation-iteration-count: 1;
+
+.poop {
+  height: 10%;
+  position: absolute;
+  content: url('images/poop.png');
+  animation-name: drop;
+  animation-duration: 2000ms;
   animation-timing-function: linear;
-  -webkit-animation-name: lineup;
-  -webkit-animation-iteration-count: 1;
-  -webkit-animation-timing-function: linear; 
+  animation-fill-mode: forwards;
+  -webkit-animation-name: drop;
+  -webkit-animation-duration: 2000ms;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-fill-mode: forwards;
 }
 
-@keyframes lineup {
-    100% {left: 0%;}
+@keyframes drop {
+  100% {top: 100%;}
 }
 
-@-webkit-keyframes lineup {
-    100% {left: 0%;}    
+@-webkit-keyframes drop {
+  100% {top: 100%;}
 }
+

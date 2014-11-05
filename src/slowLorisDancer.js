@@ -1,6 +1,6 @@
 var SlowLorisDancer = function(top, left, timeBetweenSteps){
   Dancer.call(this, top, left, timeBetweenSteps);
-  this.$node = $('<span class="slowLoris"></span>');
+  this.$node = $('<span class="slowLoris fader"></span>');
   this.step();
   this.setPosition(top, left);
   this.scale = 1

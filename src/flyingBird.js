@@ -1,18 +1,20 @@
 var FlyingBird = function(top, left){
   Dancer.call(this, top);
-  this.$node = $('<span class="flyingBird"></span>');
+  this.$node = $('<span class="flyingBird fader"></span>');
   this.step();
-  this.setPosition(top/4);
+  this.setPositionAnimate(top/4);
   this.timeBetweenSteps = 3500;
   this.scale = -1;
+  this.checkRelativePosition();
 };
 
 FlyingBird.prototype = Object.create(Dancer.prototype);
-FlyingBird.prototype.setPosition = function(top){
+FlyingBird.prototype.setPositionAnimate = function(top){
   var styleSettings = {
     top: top,
   };
   this.$node.css(styleSettings);
+
 };
 FlyingBird.prototype.constructor = FlyingBird;
 FlyingBird.prototype.oldStep = Dancer.prototype.step;

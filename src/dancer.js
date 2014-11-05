@@ -16,7 +16,6 @@ Dancer.prototype.step = function(){
     }, this.timeBetweenSteps);
   };
 
-
 Dancer.prototype.setPosition = function(top, left){
   // Use css top and left properties to position our <span> tag
   // where it belongs on the page. See http://api.jquery.com/css/
@@ -27,3 +26,26 @@ Dancer.prototype.setPosition = function(top, left){
   };
   this.$node.css(styleSettings);
 };
+
+Dancer.prototype.checkRelativePosition = function() {
+  var that = this;
+  setTimeout(function() {
+    var updatedDancers = window.dancers;
+    // console.log(that.$node.offset().left);
+    for (var i=0; i<updatedDancers.length; i++) {
+      if (updatedDancers[i] !== that && !(updatedDancers[i] instanceof FlyingBird)) {
+        var distance = Math.sqrt(Math.pow(Math.abs(that.$node.offset().top-updatedDancers[i].$node.offset().top),2) +
+                       Math.pow(Math.abs(that.$node.offset().left-updatedDancers[i].$node.offset().left),2));
+        if (distance < 75) {
+          var content = {
+            content: "url(http://dumpfm.s3.amazonaws.com/images/20101022/1287793594232-dumpfm-FAUXreal-kevinexplosionlarge.gif)"
+          };
+          updatedDancers[i].$node.css(content).fadeOut(1200);
+
+        }
+      }
+    }
+    that.checkRelativePosition();
+  }, 200)
+
+}

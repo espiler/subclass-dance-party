@@ -1,5 +1,6 @@
 $(document).ready(function(){
   window.dancers = [];
+  window.birds = [];
 
   $(".addDancerButton").on("click", function(event){
     /* This function sets up the click handlers for the create-dancer
@@ -18,7 +19,7 @@ $(document).ready(function(){
     var dancerMakerFunctionName = $(this).data("dancer-maker-function-name");
     // get the maker function for the kind of dancer we're supposed to make
     if (dancerMakerFunctionName === "Random") {
-        var allMakersFunctions = ['FlyingBird', 'StarfishSpinner', 'SlowLorisDancer', 
+        var allMakersFunctions = ['FlyingBird', 'StarfishSpinner', 'SlowLorisDancer',
           'DancingDancer', 'BigBlueBlinkyDancer', 'BlinkyDancer']
         dancerMakerFunctionName = allMakersFunctions[Math.floor(Math.random()
           *allMakersFunctions.length)]
@@ -33,15 +34,64 @@ $(document).ready(function(){
     );
 
     $('body').append(dancer.$node);
-    
+    if (dancer instanceof FlyingBird){
+      birds.push(dancer);
+    }
     dancers.push(dancer);
   });
+
+
+
+
+  $(".lineUpButton").on("click", function(event){
+
+    for (var i=0; i<dancers.length; i++) {
+      dancers[i].$node.animate({
+        left: '0%'
+      },
+      1000,
+      function(){
+        for (var j=0; j<dancers.length; j++) {
+          if (dancers[j] instanceof StarfishSpinner){
+            dancers[j].$node.animate({
+            top: '20%'
+            });
+          }
+          if (dancers[j] instanceof SlowLorisDancer){
+            dancers[j].$node.animate({
+            top: '50%'
+            });
+          }
+          if (dancers[j] instanceof FlyingBird){
+            dancers[j].$node.animate({
+            top: '10%'
+            });
+          }
+        }
+      });
+    }
+  });
+
+  $(".seagullAttack").on("click", function(event){
+    var shooterGull = window.birds[Math.floor(Math.random()*window.birds.length)];
+    console.log(shooterGull);
+    var top = shooterGull.$node.offset().top;
+    var left = shooterGull.$node.offset().left;
+    var poop = new Poop(top, left);
+    $('body').append(poop.$node)
+  })
+
 });
 
-$(".lineUpButton").on("click", function(event){
-
-  for (var i=0; i<dancers.length; i++) {
-    dancers[i].$node.addClass('lineup')
-  }
+$("body").on("click", ".fader", function(event){
+  console.log($(this).offset().top);
+  $(this).animate({
+      height: '0%'
+  }, 3000
+  )
 });
+
+
+
+
 
